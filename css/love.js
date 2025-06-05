@@ -170,7 +170,7 @@
             ctx.scale(0.75, 0.75);
             ctx.font = "12px 微软雅黑,Verdana"; // 字号肿么没有用? (ˉ(∞)ˉ)
                 // 设置文字内容，点击时播放音乐
-            var text = "Come Baby";
+            var text = "小曼姐启";
             ctx.fillText(text, 23, 10); // 你想要显示的文字
 
             // 获取点击位置
