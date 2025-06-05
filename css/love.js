@@ -169,7 +169,29 @@
             ctx.moveTo(0, 0);
             ctx.scale(0.75, 0.75);
             ctx.font = "12px 微软雅黑,Verdana"; // 字号肿么没有用? (ˉ(∞)ˉ)
-            ctx.fillText("小曼姐启", 23, 10);
+                // 设置文字内容，点击时播放音乐
+            var text = "Come Baby";
+            ctx.fillText(text, 23, 10); // 你想要显示的文字
+
+            // 获取点击位置
+            var xStart = 23, xEnd = 23 + ctx.measureText(text).width;
+            var yStart = 10 - 12, yEnd = 10;
+
+            // 监听点击事件
+            canvas.click(function(e) {
+                var offset = canvas.offset(), x, y;
+                x = e.pageX - offset.left;
+                y = e.pageY - offset.top;
+
+                // 检查点击位置是否在 "Come Baby" 文字区域内
+                if (x >= xStart && x <= xEnd && y >= yStart && y <= yEnd) {
+                    // 播放音乐
+                    var audio = document.getElementById('background-music');
+                    if (audio) {
+                        audio.play(); // 播放音乐
+                    }
+                }
+            });
             ctx.restore();
         },
         clear: function() {
